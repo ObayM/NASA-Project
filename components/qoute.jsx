@@ -29,22 +29,49 @@ const AnimatedQuoteSection = () => {
     }
   };
 
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    },
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0px 0px 8px rgb(255,255,255)",
+      transition: { duration: 0.3, ease: "easeInOut" }
+    }
+  };
+
   return (
     <div ref={ref} className="relative min-h-screen w-full overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover"
+        style={{ zIndex: -1 }}
+      >
+        <source src="/vid1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
+      {/* Overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-black opacity-50" style={{ zIndex: -1 }}></div>
 
-      <div className="flex items-center justify-center p-4">
+      <div className="flex flex-col items-center justify-center min-h-screen p-4">
         <motion.div
           className="container mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <div className="flex flex-col lg:flex-row items-center justify-between">
+          <div className="flex flex-col lg:flex-row items-center justify-between mb-12">
             {/* Text Content */}
             <motion.div 
               variants={itemVariants}
-              className="lg:w-1/2 flex justify-center"
+              className="lg:w-1/2 flex justify-center mb-8 lg:mb-0"
             >
               <motion.img
                 src="/qoute.jpg"
@@ -54,7 +81,7 @@ const AnimatedQuoteSection = () => {
                 whileTap={{ scale: 0.95 }}
               />
             </motion.div>
-            <motion.div variants={itemVariants} className="lg:w-1/2 mb-8 lg:mb-0 text-white">
+            <motion.div variants={itemVariants} className="lg:w-1/2 text-white">
               <motion.blockquote 
                 className="text-3xl md:text-4xl font-serif italic mb-6"
                 variants={itemVariants}
@@ -74,8 +101,21 @@ const AnimatedQuoteSection = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium 
               </motion.p>
             </motion.div>
-
           </div>
+
+          {/* Explore Exoplanets Button */}
+          <motion.div 
+            className="flex justify-center mt-8"
+            variants={itemVariants}
+          >
+            <motion.button
+              variants={buttonVariants}
+              whileHover="hover"
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:bg-blue-700"
+            >
+              Explore Exoplanets
+            </motion.button>
+          </motion.div>
         </motion.div>
       </div>
     </div>

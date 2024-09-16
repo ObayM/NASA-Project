@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       >
         <Analytics />
         <CustomCursor />
-        <InteractiveBackground />
+        {/* <InteractiveBackground /> */}
         {children}
       </body>
     </html>

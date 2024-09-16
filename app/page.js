@@ -15,35 +15,14 @@ const fadeInUp = {
 export default function Home() {
   return (
     <>
-      <motion.div
-        initial="initial"
-        animate="animate"
-        variants={{
-          animate: {
-            transition: {
-              staggerChildren: 0.1
-            }
-          }
-        }}
-      >
-        <motion.div variants={fadeInUp}>
+
           <Header />
-        </motion.div>
         
-        <motion.div variants={fadeInUp}>
           <HeroSection videoSrc="/vid1.mp4" />
-        </motion.div>
         
-        <motion.div variants={fadeInUp}>
           <FloatingVideoPlayer />
-        </motion.div>
-        
-        <FeaturesSection />
-        
-        <motion.div variants={fadeInUp}>
+                
           <AnimatedQuoteSection />
-        </motion.div>
-      </motion.div>
     </>
   );
 }

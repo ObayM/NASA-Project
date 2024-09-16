@@ -53,7 +53,7 @@ const AnimatedQuoteSection = () => {
         className="absolute w-full h-full object-cover"
         style={{ zIndex: -1 }}
       >
-        <source src="/vid1.mp4" type="video/mp4" />
+        <source src="/quote.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -111,7 +111,7 @@ const AnimatedQuoteSection = () => {
             <motion.button
               variants={buttonVariants}
               whileHover="hover"
-              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:bg-blue-700"
+              className="px-6 py-3 bg-indigo-800 text-white font-semibold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:bg-indigo-900"
             >
               Explore Exoplanets
             </motion.button>

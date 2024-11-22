@@ -37,7 +37,7 @@ const PlanetCard = ({ planet }) => (
   </motion.div>
 );
 
-export default function FuturisticPlanetSearch() {
+export default function PlanetSearch() {
   const [formData, setFormData] = useState({
     disc_year: "",
     distance: "",
